@@ -1,0 +1,16 @@
+*converted-to.pdf
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+main*.pdf
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+.DS_*

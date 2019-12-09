@@ -1,0 +1,171 @@
+% This scheme has been created by Jan Eichstaedt, Imperial College London, June 2017
+% This scheme has been further modified by Angelo Barboni, Imperial College London, May 2019
+% with the following additions:
+% - Most relevant parts of theme are now on core colors
+% - ICL logo now moved on footer
+% - Raised footer and added page numbers
+% - Title and text size adjusting
+
+% Imperial Core colors
+\definecolor{imperialblue}{RGB}{0 62 116}
+\definecolor{lightblue}{RGB}{212 239 252}
+\definecolor{lightgrey}{RGB}{235 238 238}
+\definecolor{coolgrey}{RGB}{157 157 157}
+\definecolor{navy}{RGB}{0 33 71}
+
+% cool support colors
+\definecolor{blue}{RGB}{0 110 175}
+\definecolor{processblue}{RGB}{0 133 202}
+\definecolor{poolblue}{RGB}{12 161 205}
+\definecolor{darkteal}{RGB}{15 130 145}
+\definecolor{teal}{RGB}{0 142 170}
+\definecolor{seaglass}{RGB}{55 159 159}
+\definecolor{darkgreen}{RGB}{2 137 59}
+\definecolor{kermitgreen}{RGB}{102 164 10}
+\definecolor{lime}{RGB}{169 214 0}
+
+% warm support colors
+\definecolor{tangerine}{RGB}{236 115 0}
+\definecolor{violet}{RGB}{150 0 120}
+\definecolor{red}{RGB}{221 37 1}
+
+\useinnertheme{rounded}
+\usefonttheme[onlymath]{serif}  
+
+% ---------------------------------------------------------------------------
+\setbeamercolor{footline1}{fg=white, bg=lightgrey}
+\setbeamercolor{footline2}{fg=white, bg=imperialblue}
+\setbeamercolor{section in head/foot}{fg=white, bg=black}
+\setbeamercolor{frametitle}{bg=white, fg=imperialblue}
+\setbeamercolor{title}{bg=white, fg=imperialblue}
+\setbeamercolor{subtitle}{bg=white, fg=black}
+\setbeamercolor{date}{bg=white, fg=navy}
+
+\setbeamercolor{structure}{fg=imperialblue}
+
+\setbeamercolor{block body}{bg=lightgrey}
+\setbeamercolor{block title}{parent=structure,fg=lightgrey, bg=imperialblue}
+\setbeamerfont{block body}{size=\small}
+\setbeamercolor{block body alerted}{bg=teal!20}
+\setbeamercolor{block title alerted}{fg=lightgrey, bg=darkteal}
+
+\setbeamercolor{section in toc}{fg=imperialblue}
+\setbeamertemplate{sections/subsections in toc}[circle]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamercolor{itemize item}{fg=imperialblue}
+\setbeamercolor{enumerate item}{fg=lightgrey, bg=imperialblue}
+
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=darkgreen}
+\setbeamercolor{example text}{fg=imperialblue}
+
+\setbeamercolor{background canvas}{parent=normal text}
+\setbeamercolor{background}{parent=background canvas}
+
+\setbeamerfont{footnote}{size=\tiny}
+
+
+\setbeamertemplate{bibliography item}[text]
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=imperialblue}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]{}
+
+
+% Imperial College Logo, not to be changed!
+\institute{\includegraphics[height=0.7cm]{Imperial_1_Pantone_solid.eps}}
+
+% layout
+\newlength{\footerHeight}
+\setlength{\footerHeight}{0.8cm}
+
+% -------------------------------------------------------------------------
+\setbeamertemplate{title page}
+{
+	\vspace{16pt}	
+	\begin{columns}[b]
+		\column{0.015\textwidth}
+		\column{0.485\textwidth}
+		\begin{beamercolorbox}[left]{institute}
+			\insertinstitute       
+		\end{beamercolorbox}
+		\column{0.4875\textwidth}
+        \begin{beamercolorbox}[right]{date}
+        	\usebeamerfont{date}\footnotesize\insertdate
+        \end{beamercolorbox}
+        \column{0.0125\textwidth}
+    \end{columns}
+    \vspace{20pt}	
+    \vfill
+	
+	\begingroup	   
+	    \begin{beamercolorbox}[left]{title}
+			\usebeamerfont{title}\LARGE\inserttitle
+	    \end{beamercolorbox}
+	    \vskip1.5em\par
+	    \begin{beamercolorbox}[left]{subtitle}
+	        \usebeamerfont{subtitle}\Large\insertsubtitle
+	    \end{beamercolorbox}
+	    \vskip1em\par
+	    \begin{beamercolorbox}[left]{author}
+	        \usebeamerfont{author}\insertauthor
+	    \end{beamercolorbox}
+	\endgroup
+}
+
+
+% -------------------------------------------------------------------------
+\setbeamertemplate{frametitle}
+{
+	\vspace{1ex}	
+  	\hbox{%
+  	\begin{beamercolorbox}[wd=0.9\paperwidth, left]{frametitle}	
+	\raggedright \insertframetitle
+	\end{beamercolorbox}
+	}%
+} 
+
+
+% -------------------------------------------------------------------------
+\setbeamertemplate{footline}
+{
+  %\vspace{8pt}	
+  \begin{beamercolorbox}[wd=1\paperwidth,ht=1.6ex,dp=0ex,center]{footline1}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=1\paperwidth,ht=0.4ex,dp=0ex,center]{footline2}
+  \end{beamercolorbox}%
+  \hbox{
+        \begin{beamercolorbox}[wd=.2\paperwidth, ht=\footerHeight, leftskip=0.15\footerHeight]{}
+            \vfill
+	        \resizebox{!}{0.7\footerHeight}{\insertinstitute}
+            \vspace{0.15\footerHeight}
+        \end{beamercolorbox}%      
+        \begin{beamercolorbox}[wd=.58\paperwidth]{}\end{beamercolorbox}
+        \begin{beamercolorbox}[wd=.2\paperwidth, ht=\footerHeight,right]{}
+            \vfill 
+            \bfseries \insertframenumber \hspace{0.15\footerHeight}
+            \vspace{0.4\footerHeight}
+        \end{beamercolorbox}%    
+  }%  
+}
+
+%% packages
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{{.eps}}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{epstopdf}
+\usepackage{tikz}  
+\usetikzlibrary{arrows.meta}
+
+\usepackage{tcolorbox}
+\newtcolorbox{simplebox}{colback=lightgrey,
+                          colframe=imperialblue,
+                          boxrule=0.9pt}
+                          
